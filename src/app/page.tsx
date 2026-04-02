@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Settings, Database } from "lucide-react";
+import { Settings, Database, Github } from "lucide-react";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -220,6 +220,19 @@ export default function SQLGeneratorPage() {
         </ResizablePanelGroup>
       </main>
 
+      {/* Footer */}
+      <footer className="px-4 py-2 border-t bg-white/50 backdrop-blur-sm text-center">
+        <a
+          href="https://github.com/CJ-1981/sql-query-generator"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-emerald-600 transition-colors"
+        >
+          <Github className="h-3.5 w-3.5" />
+          <span>View on GitHub</span>
+        </a>
+      </footer>
+
       {/* Settings Dialog */}
       {settingsOpen && (
         <SettingsDialog
@@ -235,3 +248,4 @@ export default function SQLGeneratorPage() {
     </div>
   );
 }
+
