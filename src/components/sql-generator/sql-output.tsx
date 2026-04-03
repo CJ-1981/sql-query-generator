@@ -67,7 +67,7 @@ export function SqlOutput({ sql, provider }: SqlOutputProps) {
           </Button>
         </div>
       </div>
-      <div className="rounded-lg overflow-hidden border border-border flex-1 min-h-[120px]">
+      <div className="rounded-lg overflow-auto border border-border flex-1 min-h-[120px]">
         <SyntaxHighlighter
           language="sql"
           style={oneDark}
@@ -78,6 +78,8 @@ export function SqlOutput({ sql, provider }: SqlOutputProps) {
             lineHeight: "1.6",
             background: "#1a1b26",
             minHeight: "120px",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
           }}
           showLineNumbers
           lineNumberStyle={{
