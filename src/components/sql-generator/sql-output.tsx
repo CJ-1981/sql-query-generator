@@ -35,37 +35,37 @@ export function SqlOutput({ sql, provider }: SqlOutputProps) {
 
   return (
     <div className="flex flex-col gap-3 flex-1 min-h-0">
-      <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold flex items-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          Generated SQL
-        </h3>
-        <div className="flex items-center gap-2">
+      <div className="flex items-start justify-between">
+        <div className="flex flex-col gap-1.5">
+          <h3 className="text-sm font-semibold flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            Generated SQL
+          </h3>
           <Badge
             variant="secondary"
-            className="text-xs bg-emerald-100 text-emerald-700 hover:bg-emerald-100"
+            className="text-[10px] leading-none py-1 bg-emerald-100 text-emerald-700 hover:bg-emerald-100 w-fit"
           >
             {provider}
           </Badge>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleCopy}
-            className="h-7 text-xs gap-1.5"
-          >
-            {copied ? (
-              <>
-                <Check className="h-3 w-3 text-emerald-600" />
-                Copied
-              </>
-            ) : (
-              <>
-                <Copy className="h-3 w-3" />
-                Copy
-              </>
-            )}
-          </Button>
         </div>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleCopy}
+          className="h-7 text-xs gap-1.5"
+        >
+          {copied ? (
+            <>
+              <Check className="h-3 w-3 text-emerald-600" />
+              Copied
+            </>
+          ) : (
+            <>
+              <Copy className="h-3 w-3" />
+              Copy
+            </>
+          )}
+        </Button>
       </div>
       <div className="rounded-lg overflow-auto border border-border flex-1 min-h-[120px]">
         <SyntaxHighlighter
